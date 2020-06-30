@@ -1,2 +1,2 @@
-Docker Compose MariaDB
+Docker Compose LAMP
 ====

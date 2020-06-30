@@ -1,0 +1,21 @@
+{
+  "name": "dct2012/docker-compose-lamp-helloworld",
+  "description": "Hello World for docker-compose-lamp",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cameron Taaffe",
+      "email": "cameron.taaffe@gmail.com"
+    }
+  ],
+  "minimum-stability": "beta",
+  "require": {
+    "filp/whoops": "^2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

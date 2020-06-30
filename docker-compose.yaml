@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: "_php"
+    restart: always
+    volumes:
+      - ./_php/html:/var/www/html
+    links:
+      - mariadb
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - lamp-mariadb:/var/lib/mysql
+      - ./_mariadb/logs:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+
+volumes:
+  lamp-mariadb:

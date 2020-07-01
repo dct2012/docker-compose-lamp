@@ -3,7 +3,7 @@ Docker Compose LAMP
 Linux Apache MariaDB PHP
 * PHP 7.4
 
-usage
+Usage
 -----
 edit `docker-compose.yaml`. Edit `_php/html/config.php` or replace `_php/html` with your code.
 
@@ -20,3 +20,4 @@ take your instance down:
 Considerations
 ----
 1. https://icon-icons.com/ for our favicon.ico
+1. https://github.com/mlocati/docker-php-extension-installer for making it easy to install php extensions

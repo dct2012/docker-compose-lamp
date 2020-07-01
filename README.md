@@ -16,3 +16,7 @@ Visit: http://localhost/
 take your instance down:
 
 ```$ docker-compose down```
+
+Considerations
+----
+1. https://icon-icons.com/ for our favicon.ico

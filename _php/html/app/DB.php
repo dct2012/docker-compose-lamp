@@ -9,21 +9,9 @@ use Exception;
 class DB {
 	protected PDO $PDO;
 
-	public function __construct() {
-		$dbHost     = 'mariadb';
-		$dbPort     = '3306';
-		$dbName     = 'docker';
-		$dbUserName = 'docker';
-		$dbPassword = 'docker';
-
-		$dsn = "mysql:host=$dbHost;port=$dbPort;dbname=$dbName";
-
-		$this->createConnection( $dsn, $dbUserName, $dbPassword );
-	}
-
-	protected function createConnection( string $dsn, string $username, string $password ) {
+	public function __construct( Config $Config ) {
 		try {
-			$this->PDO = new PDO( $dsn, $username, $password );
+			$this->PDO = new PDO( $Config->getDbDsn(), $Config->getDbUserName(), $Config->getDbPassword() );
 		} catch( Exception $e ) {
 			var_dump( $e->getMessage() );
 		}

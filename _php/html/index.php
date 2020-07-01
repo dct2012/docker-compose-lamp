@@ -1,7 +1,9 @@
 <?php
 require_once( 'vendor/autoload.php' );
+require_once( 'config.php' );
 
 use App\DB;
+use App\Config;
 use Whoops\Run;
 use Whoops\Handler\PrettyPageHandler;
 
@@ -9,7 +11,9 @@ $Whoops = new Run();
 $Whoops->pushHandler( new PrettyPageHandler() );
 $Whoops->register();
 
-$DB       = new DB();
+$Config = new Config( $config );
+
+$DB       = new DB( $Config );
 $greeting = $DB->getGreeting();
 
 ?>

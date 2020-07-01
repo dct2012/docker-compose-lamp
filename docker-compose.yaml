@@ -20,7 +20,6 @@ services:
       - "127.0.0.1:3306:3306"
     volumes:
       - lamp-mariadb:/var/lib/mysql
-      - ./_mariadb/logs:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: docker
       MYSQL_DATABASE: docker

@@ -18,10 +18,20 @@ class DB {
 		);
 	}
 
+	/**
+	 * @param string $stmt
+	 * @return mixed
+	 */
 	public function query( string $stmt ) {
 		return $this->PDO->query( $stmt, PDO::FETCH_ASSOC )->fetch();
 	}
 
+	/**
+	 * @param string $from
+	 * @param string $cols
+	 * @param string $cond
+	 * @return array
+	 */
 	public function select( string $from, string $cols = '*', string $cond = '' ): array {
 		$stmt = "SELECT $cols FROM $from";
 		if( !empty( $cond ) ) {

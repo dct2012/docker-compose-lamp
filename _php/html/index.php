@@ -4,6 +4,7 @@ require_once( 'config.php' );
 
 use App\DB;
 use App\Config;
+use App\Models\Greetings;
 use Whoops\Run;
 use Whoops\Handler\PrettyPageHandler;
 
@@ -13,8 +14,9 @@ $Whoops->register();
 
 $Config = new Config( $config );
 
-$DB       = new DB( $Config );
-$greeting = $DB->getGreeting();
+$DB        = new DB( $Config );
+$Greetings = new Greetings( $DB );
+$greeting  = $Greetings->getGreeting();
 
 ?>
 

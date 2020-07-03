@@ -11,12 +11,12 @@ class Config {
 	protected string $dbDsn;
 
 	public function __construct( array $config ) {
-		$this->dbName     = $config[ 'dbName' ];
-		$this->dbUserName = $config[ 'dbUserName' ];
-		$this->dbPassword = $config[ 'dbPassword' ];
+		$this->dbName     = $config[ 'db' ][ 'name' ];
+		$this->dbUserName = $config[ 'db' ][ 'userName' ];
+		$this->dbPassword = $config[ 'db' ][ 'password' ];
 
-		$dbHost      = $config[ 'dbHost' ];
-		$dbPort      = $config[ 'dbPort' ];
+		$dbHost      = $config[ 'db' ][ 'host' ];
+		$dbPort      = $config[ 'db' ][ 'port' ];
 		$this->dbDsn = "mysql:host=$dbHost;port=$dbPort;dbname=$this->dbName";
 	}
 

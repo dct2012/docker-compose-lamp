@@ -1,8 +1,13 @@
 <?php
-$config = [
-	'dbHost'     => 'mariadb',
-	'dbPort'     => '3306',
-	'dbName'     => 'docker',
-	'dbUserName' => 'docker',
-	'dbPassword' => 'docker',
-];
+define(
+	'CONFIG',
+	[
+		'db' => [
+			'host'     => 'mariadb',
+			'port'     => '3306',
+			'name'     => 'docker',
+			'userName' => 'docker',
+			'password' => 'docker',
+		]
+	]
+);

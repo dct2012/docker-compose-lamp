@@ -21,7 +21,7 @@ $M = new Mustache_Engine(
 	]
 );
 
-$Config = new Config( $config );
+$Config = new Config( CONFIG );
 
 $DB        = new DB( $Config );
 $Greetings = new Greetings( $DB );

@@ -1,20 +1,17 @@
 Docker Compose LAMP
 ====
-Linux Apache MariaDB PHP
-* PHP 7.4
+Linux Apache MariaDB PHP7.4
 
 Usage
 -----
-edit `docker-compose.yaml`. Edit `_php/html/config.php` or replace `_php/html` with your code.
+1. Edit `docker-compose.yaml`. Edit `_php/html/config.php` or replace `_php/html` with your code.
 
-bring your instance up:
-
+1. Bring your instance up: \
 ```$ docker-compose up -d```
 
-Visit: http://localhost/
+1. Visit: http://localhost/
 
-take your instance down:
-
+1. Take your instance down: \
 ```$ docker-compose down```
 
 Considerations

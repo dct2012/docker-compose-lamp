@@ -4,6 +4,7 @@ services:
   web:
     build:
       context: "_php"
+    container_name: web
     restart: always
     volumes:
       - ./_php/html:/var/www/html
@@ -15,10 +16,12 @@ services:
 
   mariadb:
     image: mariadb:latest
+    container_name: db
     restart: always
     ports:
       - "127.0.0.1:3306:3306"
     volumes:
+      - ./_db:/docker-entrypoint-initdb.d
       - lamp-mariadb:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: docker
